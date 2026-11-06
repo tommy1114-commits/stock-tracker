@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>持股追蹤</title>
+    
+    <!-- PWA & Apple Web App Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="持股追蹤" />
+    <meta name="application-name" content="持股追蹤" />
+    <meta name="theme-color" content="#456F95" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Google Identity Services (GIS) for Google Sheets OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="module" crossorigin src="./assets/index-C6zsvd7W.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D1DVjTk7.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Register Service Worker for PWA (App Shell caching only; excludes Google Sheets API)
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then((reg) => {
+            console.log('PWA ServiceWorker registered with scope:', reg.scope);
+          }).catch((err) => {
+            console.warn('PWA ServiceWorker registration failed:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

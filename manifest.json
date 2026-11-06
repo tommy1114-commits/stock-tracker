@@ -1,0 +1,22 @@
+{
+  "short_name": "持股追蹤",
+  "name": "個人持股追蹤 PWA",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "background_color": "#F6F8FB",
+  "theme_color": "#456F95",
+  "display": "standalone",
+  "orientation": "portrait"
+}
